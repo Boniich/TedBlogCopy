@@ -4,10 +4,8 @@ export function Menu(){
     $menu.classList.add("Menu");
     $menu.innerHTML = `
     <a href="#/">Newest</a>
-    <a href="#/">Popular</a>
+    <a href="#/Popular">Popular</a>
     <a href="#/">Live From TEDMonterey</a>`
-
-    $menu.style.display = "none"; 
 
     return $menu;
 

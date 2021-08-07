@@ -5,15 +5,19 @@ export function Select(){
     $option2 = document.createElement("option"),
     $option3 = document.createElement("option");
 
-     $option1.innerHTML = `Hola`; //sirve pero solo toma uno
-     $option2.innerHTML = "chau";
-     $option3.innerHTML = "PEPE";
+    $Select.classList.add("menu_desplegable");
+
+     $option1.innerHTML = "Newest"; //sirve pero solo toma uno
+     $option2.innerHTML = "Popular";
+     $option3.innerHTML = "Live From TEDMonterey";
 
     
 
     $Select.appendChild($option1);
     $Select.appendChild($option2);
     $Select.appendChild($option3);
+
+    
 
     return $Select;
 }

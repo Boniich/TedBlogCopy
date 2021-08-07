@@ -6,7 +6,8 @@ SITE = `${DOMAIN}/wp-json`,
 API_WP = `${SITE}/wp/v2`,
 POSTS = `${API_WP}/posts?_embed`,
 POST = `${API_WP}/posts`,
-CATEGORIES = `${API_WP}/CATEGORIES`,
+CATEGORIES = `${API_WP}/categories`,
+TAGS = `${API_WP}/TAGS`,
 SEARCH =`${API_WP}/search?_embed&search=`;
 
 export default{
@@ -17,5 +18,6 @@ export default{
     POSTS,
     POST,
     CATEGORIES,
+    TAGS,
     SEARCH
 }

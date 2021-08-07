@@ -8,10 +8,10 @@ import { Title } from "./title.js";
 export function Header(){
 
     const $header = document.createElement("header");
-    // $header.classList.add() 
+    $header.classList.add("header"); 
     $header.appendChild(Title());
     $header.appendChild(SearchForm());
-    $header.appendChild(Linea());
+    // $header.appendChild(Linea());
 
     return $header;
 
