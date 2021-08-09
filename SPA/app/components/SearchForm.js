@@ -5,6 +5,7 @@ export function SearchForm(){
     const doc = document,
     $form = doc.createElement("form"),
     $input = doc.createElement("input");
+    $form.classList.add("buscar");
 
     // $form.classList.add();
 
@@ -13,7 +14,7 @@ export function SearchForm(){
     $input.placeholder = "Buscar...";
     $input.autocomplete = "off";
     // Desactivamos hasta que empezemos a dar estilos y responsive
-    $input.style.display = "none";
+  
 
     $form.appendChild($input);
 

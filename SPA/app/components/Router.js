@@ -25,7 +25,9 @@ export async function Router(){
         //     cbSuccess: (categories) =>{
         //         console.log(categories);
         //     }
-        // });
+        // });  
+
+
     
         await Ajax({
             url: api.POSTS,

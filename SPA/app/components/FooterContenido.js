@@ -1,28 +1,47 @@
 export function FooterContenido(){
-    
-    const $divFooter = document.createElement("div"),
-    $h2 = document.createElement("h2"),
-    $h3 = document.createElement("h3"),
-    $h4 = document.createElement("h4"),
-    $p = document.createElement("p"),
-    $p2 = document.createElement("p"),
-    $botonLogin = document.createElement("a");
-    $divFooter.classList.add("footerContenido");
-    $h4.classList.add("botonLogin");
 
-    $h2.innerHTML = "<a href='#'>TED</a>";
+    //Vamos a generar un div con la clase conteiner para usar el display table
+    //vamos a cambiar el h2 por a 
+    const $doc = document,
+    $conteiner = $doc.createElement("div"),
+    $FooterContent = $doc.createElement("div"),
+    $FooterContentForms = $doc.createElement("div"),
+    $footerDetalles = $doc.createElement("div"),
+    $a = $doc.createElement("a"),
+    $h3 = $doc.createElement("h3"),
+    $p = $doc.createElement("p"),
+    $botonLogin = $doc.createElement("a");
+    
+    // Clases Css
+    $conteiner.classList.add("conteiner");
+    $FooterContent.classList.add("footerContent");
+    $FooterContentForms.classList.add("footerContentForms");
+    $footerDetalles.classList.add("footerContentDetalles");
+    $botonLogin.classList.add("botonLogin");
+
+    $a.classList.add("logoPequeño");
+    $a.classList.add("footerLogo");
+
+ 
+
+    $a.innerHTML = "TED";
     $h3.innerHTML = "Sign up for TED email updates";
     $p.innerHTML = "Sign up for our daily or weekly emails to receive notifications whenever new talks are published";
     $botonLogin.innerHTML = "Sing Up";
     $botonLogin.href="#";
+
+
+    
+
  
-    $h4.appendChild($botonLogin);
-    $divFooter.appendChild($h2);
-    $divFooter.appendChild($h3);
-    $divFooter.appendChild($p);
-    $divFooter.appendChild($h4);
+    $conteiner.appendChild($FooterContent);
+    $FooterContent.appendChild($a);
+    $FooterContent.appendChild($FooterContentForms);
+    $FooterContentForms.appendChild($h3);
+    $FooterContentForms.appendChild($footerDetalles);
+    $footerDetalles.appendChild($p);
+    $footerDetalles.appendChild($botonLogin);
 
-
-    return $divFooter;
+    return $conteiner;
 
 }

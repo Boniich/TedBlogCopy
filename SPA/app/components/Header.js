@@ -7,10 +7,21 @@ import { Title } from "./title.js";
 
 export function Header(){
 
-    const $header = document.createElement("header");
+    const $header = document.createElement("header"),
+          $headorConteiner = document.createElement("div"),
+          $cajaTitulo = document.createElement("div"),
+          $cajaBuscar = document.createElement("div");
     $header.classList.add("header"); 
-    $header.appendChild(Title());
-    $header.appendChild(SearchForm());
+    $headorConteiner.classList.add("contenedorHeader");
+    $cajaTitulo.appendChild(Title());
+    $cajaTitulo.classList.add("cajaTitulo");
+    $cajaBuscar.appendChild(SearchForm());
+    $cajaBuscar.classList.add("cajaBuscar");
+
+    $headorConteiner.appendChild($cajaTitulo);
+    $headorConteiner.appendChild($cajaBuscar);
+
+    $header.appendChild($headorConteiner);
     // $header.appendChild(Linea());
 
     return $header;
