@@ -8,7 +8,19 @@
 }
 
 
-.conteiner, .contenedorHeader{
+
+/* ID */
+
+#btnLoginRecommend{
+    
+    margin: 0 0;
+    height: 25px;
+    
+}
+
+/* Clases */
+
+.conteiner, .contenedorHeader, .contentPrincipal{
     padding: 0 20px;
     clear: both;
     float: none;
@@ -43,7 +55,7 @@
     border-bottom: 2px solid #ccc;
 }
 
-.contenedorHeader, .conteiner_menu, .main{
+.contenedorHeader, .conteiner_menu{
     padding: 0 20px;
 }
 
@@ -77,21 +89,41 @@
     display: none;
 }
 
-.contenedorMain{
-    border-bottom: 1.5px solid red;
+
+
+.contenidoGeneral{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas: "Cabezera"
+                         "main" 
+                         "sideBar";
 }
 
+.postCabezera{
+    grid-area: Cabezera;
+}
+
+
 .main{
-    display: flex;
-    flex-direction: column;
-    /* flex-wrap: wrap; */
+    grid-area: main;
+
+
 } 
+
+.seccionCajas{
+
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+}
 
 .articulo{
     border-top: 1px dotted gray;
-    padding-top: 12px;
-    
+    padding-top: 12px;  
+    padding: 15px 0;
+    margin-right: 20px;
 }
+
 
 .categoria{
 
@@ -137,12 +169,32 @@
     font-size: 15px;
 }
 
+.sideBar{
+    grid-area: sideBar;
+}
+
+.recommendBar{
+    margin-left: 15px;
+    display: none;
+}
+
+.recommendBar h2{
+
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 15px;
+
+}
+
+
+
 .social_bar{
 
     margin-top: 20px;
     /* No se muestra como quiero */
     border-top: 1px solid gray;
     padding: 15px 0;
+    
 }
 
 .titulo_social_bar{
@@ -174,6 +226,7 @@
 }
 
 .footer{
+    border-top: 2px solid red;
     padding: 30px 0 0;
     text-align: center;
 }
@@ -274,20 +327,9 @@
     .menu_desplegable{
         display: none;
     }
+
     
-
-    .main{
-        justify-content: center;
-        flex-direction: row;
-    }
-
-    /* .articulo{
-        width: 46%;
-    } */
-
-    #posts{
-        width: 300px;
-    }
+    
 
     .social_bar{
         margin-left: 15px;
@@ -369,6 +411,20 @@
 }
 
 @media screen and (min-width: 1024px) {
+
+    .header{
+
+        border-bottom: 2px solid red;
+    }
+
+    .recommendBar{display: block;}
+
+    .contenidoGeneral{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-areas: "Cabezera Cabezera"
+                             "main sideBar";
+    }
     
     .contenedorHeader{
         display: flex;
@@ -389,9 +445,5 @@
     .footerContentForms{
         width: 30%;
     }
-    
-}
-
-@media screen and (min-width: 1300px) {
     
 }

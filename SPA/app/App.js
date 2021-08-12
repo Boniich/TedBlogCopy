@@ -1,9 +1,9 @@
 // Vamos a llmar a todos los componenetes o helpers para renderizar el html
 
 import { ConteinerMenu } from "./components/ConteinerMenu.js";
+import { ContentPrincipal } from "./components/ContentPrincipal.js";
 import { Footer } from "./components/Footer.js";
 import { Header } from "./components/Header.js";
-import { Main } from "./components/Main.js";
 import { Posts } from "./components/Posts.js";
 import { Router } from "./components/Router.js";
 
@@ -15,7 +15,7 @@ export function App(){
     const $root = document.getElementById("root");
     $root.appendChild(Header());
     $root.appendChild(ConteinerMenu());
-    $root.appendChild(Main());
+    $root.appendChild(ContentPrincipal());
     $root.appendChild(Footer());
     // $root.appendChild(Posts());
 

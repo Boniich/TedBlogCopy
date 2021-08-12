@@ -38,7 +38,7 @@ export function PostCard(props){
     // Primero estructura con html
     // ${_embedded["wp:featuredmedia"][0].source_url}
     return `
-    <article class="articulo">
+    <article id="posts" class="articulo">
     <a class="categoria" href="#">${_embedded["wp:term"][0][0].name}</a>
     <div class="caja_titulo_img">
     <h3 class="titulo_posts"><a href="${slug}">${title.rendered}</a></h3>

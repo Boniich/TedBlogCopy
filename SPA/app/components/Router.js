@@ -2,6 +2,7 @@
 import api from "../helpers/wp_api.js";
 import { Ajax } from "../helpers/ajax.js";
 import { PostCard } from "./PostCard.js";
+import { btnStories } from "./btnStories.js";
 
 export async function Router(){
 
@@ -35,7 +36,9 @@ export async function Router(){
                 console.log(posts);
                 let html = "";
                 posts.forEach(post => html += PostCard(post));
-                document.getElementById("posts").innerHTML = html;
+                document.getElementById("mainPost").innerHTML = html;
+
+
         
             }
         });
