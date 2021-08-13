@@ -18,6 +18,7 @@ export function PostCard(props){
         "Enero",
         "Febrero",
         "Marzo",
+        "mayo",
         "Abril",
         "Junio",
         "Julio",

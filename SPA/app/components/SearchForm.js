@@ -18,6 +18,29 @@ export function SearchForm(){
 
     $form.appendChild($input);
 
+
+    // comprovamos que la direccion contenga el #
+
+    if(location.hash.includes("#/search")){
+        $input.value = localStorage.getItem("wpSearch");
+    }
+
+    doc.addEventListener("search", e=>{
+
+        if(!e.target.matches("input[type='search']")) return false;
+        if(!e.target.value) localStorage.removeItem("wpSearch");
+
+    });
+
+
+    doc.addEventListener("submit", (e)=>{
+        // si no se usa el formulario retornamos falso
+        if(!e.target.matches(".buscar")) return false;
+        e.preventDefault();
+        localStorage.setItem("wpSearch",e.target.search.value);
+        location.hash = `#/search?search=${e.target.search.value}`;
+    });
+
     return $form;
 
 

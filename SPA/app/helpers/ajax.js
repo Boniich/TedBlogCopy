@@ -8,9 +8,8 @@ export async function Ajax(props){
         .then(json => cbSuccess(json))
         .catch(err => {
             let message = err.statusText || "ocurrio un error";
-
-            document.getElementById("main").innerHTML = `
-            <div class="error">${err.statusText}:${message}<p></p></div>`
+            console.log(err);
+            document.getElementById("mainPost").innerHTML = `<div class="error">${err.statusText}:${message}<p></p></div>`
         });
     
 }
