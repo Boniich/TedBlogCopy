@@ -11,6 +11,11 @@ export function ContentPrincipal(){
     $main = $doc.createElement("main");
     $main.id = "mainPost";
 
+    // contenido textual
+
+
+    // id
+
     $postCabezera.id = "postCabezera";
     //Clases de css
 

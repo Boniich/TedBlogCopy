@@ -56,7 +56,7 @@ export async function Router(){
         
     }else if(hash.includes("#/search")){
 
-
+        document.getElementById("menu").style.display = "none";
         let query = localStorage.getItem("wpSearch");
 
         await Ajax({
@@ -68,6 +68,7 @@ export async function Router(){
                 if(search.length === 0){
                     html = "No existen resultados";
                 }else{
+                    
                     search.forEach((post)  => (html += SearchCard(post)));
                 }
 
