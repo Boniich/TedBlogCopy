@@ -15,12 +15,17 @@ export function PostCard(props){
     let {date,id,slug,title,excerpt, _embedded} = props;
 
     const newDate = GetDate(date);
+
+    document.addEventListener("click", (e)=>{
+        if(!e.target.matches(".articulo h3 a")) return false;
+        localStorage.setItem("wpPostId",e.target.dataset.id);
+    });
     
     return `
-    <article id="posts" class="articulo">
+    <article class="articulo">
     <a class="categoria" href="#">${_embedded["wp:term"][0][0].name}</a>
     <div class="caja_titulo_img">
-    <h3 class="titulo_posts"><a href="${slug}">${title.rendered}</a></h3>
+    <h3 class="titulo_posts"><a href="#/${slug}" data-id="${id}">${title.rendered}</a></h3>
     <img class="img_posts" src="${_embedded["wp:featuredmedia"][0].source_url}">
     </div>
     <p class="autor_fecha">By <a class="autor" href="#">${_embedded["author"][0].name}</a><time>${newDate}</time></p>

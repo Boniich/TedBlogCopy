@@ -11,7 +11,7 @@ export function SearchCard(props){
     let img = _embedded.self[0].jetpack_featured_media_url;
     let slug = _embedded.self[0].slug;
     let text = _embedded.self[0].excerpt.rendered;
-    let author = _embedded.self[0].author;
+    let author = _embedded.self[0].author.name;
     let date = _embedded.self[0].date;  
     
 

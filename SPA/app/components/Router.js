@@ -5,6 +5,7 @@ import { PostCard } from "./PostCard.js";
 import { btnStories } from "./btnStories.js";
 import { SearchCard } from "./SearchCard.js";
 import { PostCardPrincipal } from "./PostCardPrincipal.js";
+import { Post } from "./Post.js";
 
 export async function Router(){
 
@@ -73,6 +74,20 @@ export async function Router(){
                 }
 
                 document.getElementById("mainPost").innerHTML = html;
+            }
+        });
+
+    }else{
+        document.getElementById("mainPost").innerHTML = "Contenido de cada post";
+
+        let id = localStorage.getItem("wpPostId");
+
+        await Ajax({
+
+            url: `${api.POST}/${id}`,
+            cbSuccess: (post) =>{
+                console.log(post);
+                $main.innerHTML = Post(post);
             }
         });
 
