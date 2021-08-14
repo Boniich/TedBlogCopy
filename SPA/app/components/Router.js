@@ -4,6 +4,7 @@ import { Ajax } from "../helpers/ajax.js";
 import { PostCard } from "./PostCard.js";
 import { btnStories } from "./btnStories.js";
 import { SearchCard } from "./SearchCard.js";
+import { PostCardPrincipal } from "./PostCardPrincipal.js";
 
 export async function Router(){
 
@@ -16,27 +17,37 @@ export async function Router(){
    
     if(!hash || hash === "#/"){
 
-        // Ajax({
-        //     url: api.TAGS,
-        //     cbSuccess: (tags) =>{
-        //         console.log(tags);
-        //     }
-        // });
-
-        // Ajax({
-        //     url: api.CATEGORIES,
-        //     cbSuccess: (categories) =>{
-        //         console.log(categories);
-        //     }
-        // });  
-
         await Ajax({
             url: api.POSTS,
             cbSuccess: (posts) =>{
                 console.log(posts);
                 let html = "";
-                posts.forEach(post => html += PostCard(post));
-                document.getElementById("mainPost").innerHTML = html;
+                // forma precaria de determinar que post tiene que ir como encabezado
+                let contador = 1;
+                    posts.forEach(post =>{
+                        
+                        if(contador === 1){
+                            console.log(posts[0]);
+                            html = PostCardPrincipal(post);
+                            document.getElementById("postCabezera").innerHTML = html;
+                            //reteados el contador para que no se vuelva a ejecutar esta linea
+                            contador = 0;
+                            // reseteamos el html para que el primer post no se repetira en las filas
+                            html = "";
+                        }else{
+                            html += PostCard(post)
+                            document.getElementById("mainPost").innerHTML = html;
+
+                        }
+
+                        
+
+                    });
+                    
+                // }
+
+                
+
 
 
         

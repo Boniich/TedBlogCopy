@@ -18,6 +18,38 @@
     
 }
 
+#postCabezera > .articulo{
+    border: none;
+    
+}
+
+#postCabezera > .articulo > .postPrincipalDetalles .texto_intro{
+    display: none;
+}
+
+#postCabezera > .articulo{
+    padding-bottom: 0;
+    display: grid;
+}
+
+#postCabezera > .articulo > .postPrincipalDetalles{
+    background-color: black;
+    padding: 20px 20px;
+
+}
+
+#postCabezera > .articulo >.imgPosPrincipal{
+    width: 100%;
+    
+  
+}
+
+#postCabezera > .articulo > .postPrincipalDetalles a,
+#postCabezera > .articulo > .postPrincipalDetalles > .autor_fecha{
+    color: #fff;
+}
+
+
 /* Clases */
 
 .conteiner, .contenedorHeader, .contentPrincipal{
@@ -41,6 +73,10 @@
     text-align: center;
     margin: 20px 0;
     font-size: 40px;
+}
+
+.titulo a{
+    color: black;
 }
 
 
@@ -308,6 +344,7 @@
 
 
 
+
     .menu{
         /* Es necesario para que deje de tener efecto el display: none */
         display: inline-block;
@@ -411,6 +448,33 @@
 }
 
 @media screen and (min-width: 1024px) {
+
+    #postCabezera > .articulo{
+        margin-bottom: 20px;
+        padding-bottom: 0;
+        display: grid;
+        grid-template-columns: 600px auto;
+        grid-template-areas: "imgPosPrincipal postPrincipalDetalles";
+    }
+
+    #postCabezera > .articulo > .imgPosPrincipal{
+        grid-area: imgPosPrincipal;
+    }
+
+    #postCabezera > .articulo > .postPrincipalDetalles{
+        grid-area: postPrincipalDetalles;
+        width: 100%;
+    }
+
+    #postCabezera > .articulo >.imgPosPrincipal{
+        width: 600px;
+        height: auto;
+    }
+
+    #postCabezera > .articulo > .postPrincipalDetalles .texto_intro{
+        color: #fff;
+        display: block;
+    }
 
     .header{
 
