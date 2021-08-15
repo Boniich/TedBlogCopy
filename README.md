@@ -6,7 +6,7 @@ Objetivo: copiar lo mejor posible el blog de ted. Lenguages/Tecnologias usadas: 
 
 Estructura del proyecto:
 
-SPA: Contiene las tres carpetas a continuacion (Asset, components y helpers), ademas del archivo app.js e index.html
+SPA: Contiene la carpeta APP y el index.html. La carpeta APP a su vez contiene las tres carpetas descritas aqui abajo.
 
 Asset: contiene imagenes y el archivo css 
 
