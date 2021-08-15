@@ -1,6 +1,5 @@
-import { btnStories } from "./btnStories.js";
 import { ConteinerSideBar } from "./ConteinerSideBar.js";
-import { SocialBar } from "./SocialBar.js";
+
 
 export function ContentPrincipal(){
     const $doc = document,

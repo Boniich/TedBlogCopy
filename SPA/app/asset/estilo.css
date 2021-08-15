@@ -62,14 +62,6 @@
     margin: 0 auto;
 }
 
-.conteiner::after{
-    content: "";
-    display: table;
-    clear: both;
-}
-
-
-
 .titulo{
     text-align: center;
     margin: 20px 0;
@@ -182,7 +174,6 @@
 
 .caja_titulo_img{
     display: flex;
-    /* justify-content: space-between; */
 }
 .img_posts{
     width: 144px;
@@ -249,6 +240,11 @@
     font-size: 20px;
     color: black;
     padding: 5px 3px;
+}
+
+.iconos_social:hover{
+    color: #999;
+   
 }
 
 .botonStories{
@@ -344,11 +340,6 @@
 
 @media screen and (min-width: 800px) {
 
-
-
-
-
-
     .menu{
         /* Es necesario para que deje de tener efecto el display: none */
         display: inline-block;
@@ -365,6 +356,9 @@
         color: grey;
     }
 
+
+
+
     .menu_desplegable{
         display: none;
     }
@@ -378,11 +372,6 @@
     }
 
     .footerServices{
-        /* display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-wrap: wrap; */
-        
         text-align: left;
     }
 

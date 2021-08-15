@@ -1,4 +1,3 @@
-import api from "../helpers/wp_api.js";
 
 export function Title(){
 

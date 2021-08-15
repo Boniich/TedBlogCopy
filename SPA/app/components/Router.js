@@ -2,7 +2,6 @@
 import api from "../helpers/wp_api.js";
 import { Ajax } from "../helpers/ajax.js";
 import { PostCard } from "./PostCard.js";
-import { btnStories } from "./btnStories.js";
 import { SearchCard } from "./SearchCard.js";
 import { PostCardPrincipal } from "./PostCardPrincipal.js";
 import { Post } from "./Post.js";
@@ -37,24 +36,24 @@ export async function Router(){
                             html = "";
                         }else{
                             html += PostCard(post)
-                            document.getElementById("mainPost").innerHTML = html;
+                            $main.innerHTML = html;
 
                         }
 
-                        
 
                     });
                     
-                // }
-
-                
-
-
-
-        
             }
         });
         
+    }else if(hash === "#/popular"){
+
+        $main.innerHTML = "Contenido popular";
+
+    }else if(hash === "#/live"){
+
+        $main.innerHTML = "Contenido TedMonterrey";
+
     }else if(hash.includes("#/search")){
 
         document.getElementById("menu").style.display = "none";
@@ -73,12 +72,11 @@ export async function Router(){
                     search.forEach((post)  => (html += SearchCard(post)));
                 }
 
-                document.getElementById("mainPost").innerHTML = html;
+                $main.innerHTML = html;
             }
         });
 
     }else{
-        document.getElementById("mainPost").innerHTML = "Contenido de cada post";
 
         let id = localStorage.getItem("wpPostId");
 
