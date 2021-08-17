@@ -1,4 +1,5 @@
 import { ConteinerSideBar } from "./ConteinerSideBar.js";
+import { Loader } from "./Loader.js";
 
 
 export function ContentPrincipal(){
@@ -29,6 +30,7 @@ export function ContentPrincipal(){
     $contentPrincipal.appendChild($contenidoGeneral);
     $contenidoGeneral.appendChild($postCabezera);
     $contenidoGeneral.appendChild($main);
+    $main.appendChild(Loader());
     $contenidoGeneral.appendChild(ConteinerSideBar());
     
 

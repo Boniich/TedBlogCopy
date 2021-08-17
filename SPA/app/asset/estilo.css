@@ -51,6 +51,10 @@
 }
 
 
+#filterArticles{
+    font-style: italic;
+}
+
 /* Clases */
 
 .conteiner, .contenedorHeader, .contentPrincipal{
@@ -338,6 +342,13 @@
 
 .conteinerServices ul li a, .conteinerServices p{color: #fff;}
 
+.loader{
+
+    margin: 1rem auto;
+    display: block;
+    width: 4rem;
+    height: 4rem;
+}
 
 @media screen and (min-width: 800px) {
 
@@ -357,15 +368,10 @@
         color: grey;
     }
 
-
-
-
     .menu_desplegable{
         display: none;
     }
 
-    
-    
 
     .social_bar{
         margin-left: 15px;

@@ -4,6 +4,7 @@ import { ConteinerMenu } from "./components/ConteinerMenu.js";
 import { ContentPrincipal } from "./components/ContentPrincipal.js";
 import { Footer } from "./components/Footer.js";
 import { Header } from "./components/Header.js";
+import { Loader } from "./components/Loader.js";
 import { Router } from "./components/Router.js";
 
 
@@ -16,7 +17,9 @@ export function App(){
     $root.appendChild(Header());
     $root.appendChild(ConteinerMenu());
     $root.appendChild(ContentPrincipal());
+    
     $root.appendChild(Footer());
+    
 
     Router();
     

@@ -5,20 +5,22 @@ import { PostCard } from "./PostCard.js";
 import { SearchCard } from "./SearchCard.js";
 import { PostCardPrincipal } from "./PostCardPrincipal.js";
 import { Post } from "./Post.js";
+import { specialStyleMenu } from "../helpers/specialStyleMenu.js";
 
 export async function Router(){
 
     const doc = document,
     w = window,
     $main = doc.getElementById("mainPost");
+  
 
     let {hash} = location;
 
    
     if(!hash || hash === "#/"){
 
-        document.getElementById("colorNewest").style.color = "red";
-        document.getElementById("colorNewest").style.fontWeight = "bold";
+        //le pasamos un id para realizar los cambios en los <a> del menu +800px
+        specialStyleMenu("colorNewest");
 
         await Ajax({
             url: api.POSTS,
@@ -36,8 +38,9 @@ export async function Router(){
                             // reseteamos el html para que el primer post no se repetira en las filas
                             html = "";
                         }else{
-                            html += PostCard(post)
+                            html += PostCard(post);
                             $main.innerHTML = html;
+                            
 
                         }
 
@@ -49,8 +52,8 @@ export async function Router(){
         
     }else if(hash === "#/popular"){
 
-        document.getElementById("colorPopular").style.color = "red";
-        document.getElementById("colorPopular").style.fontWeight = "bold";
+        specialStyleMenu("colorPopular");
+
         await Ajax({
             url: api.POSTS,
             cbSuccess: (posts) =>{
@@ -63,6 +66,8 @@ export async function Router(){
 
 
     }else if(hash === "#/live"){
+
+        specialStyleMenu("colorTED");
 
         $main.innerHTML = "Contenido TedMonterrey";
 
