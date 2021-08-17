@@ -17,21 +17,22 @@ export async function Router(){
    
     if(!hash || hash === "#/"){
 
+        document.getElementById("colorNewest").style.color = "red";
+        document.getElementById("colorNewest").style.fontWeight = "bold";
+
         await Ajax({
             url: api.POSTS,
             cbSuccess: (posts) =>{
-                console.log(posts);
                 let html = "";
-                // forma precaria de determinar que post tiene que ir como encabezado
-                let contador = 1;
+                // determinamos que el primer post tiene que ir como encabezado
+                let flag = true;
                     posts.forEach(post =>{
-                        
-                        if(contador === 1){
-                            console.log(posts[0]);
+
+                        if(flag === true){
                             html = PostCardPrincipal(post);
                             document.getElementById("postCabezera").innerHTML = html;
-                            //reteados el contador para que no se vuelva a ejecutar esta linea
-                            contador = 0;
+                            //reteados el flag para que no se vuelva a ejecutar esta linea
+                            flag = false;
                             // reseteamos el html para que el primer post no se repetira en las filas
                             html = "";
                         }else{
@@ -48,7 +49,18 @@ export async function Router(){
         
     }else if(hash === "#/popular"){
 
-        $main.innerHTML = "Contenido popular";
+        document.getElementById("colorPopular").style.color = "red";
+        document.getElementById("colorPopular").style.fontWeight = "bold";
+        await Ajax({
+            url: api.POSTS,
+            cbSuccess: (posts) =>{
+                console.log(posts);
+                let popularPosts = "";
+                posts.forEach(post =>{popularPosts += PostCard(post)});
+                $main.innerHTML = popularPosts;
+            }
+        })
+
 
     }else if(hash === "#/live"){
 
@@ -63,26 +75,24 @@ export async function Router(){
 
             url: `${api.SEARCH}${query}`,
             cbSuccess: (search) =>{
-                console.log(search);
-                let html = "";
+                let postsSearched = "";
                 if(search.length === 0){
-                    html = "No existen resultados";
-                }else{
                     
-                    search.forEach((post)  => (html += SearchCard(post)));
-                }
+                    postsSearched = "No existen resultados";
 
-                $main.innerHTML = html;
+                }else{search.forEach((post)  => (postsSearched += SearchCard(post)));}
+
+                $main.innerHTML = postsSearched;
             }
         });
 
     }else{
 
-        let id = localStorage.getItem("wpPostId");
+        let idPost = localStorage.getItem("wpPostId");
 
         await Ajax({
 
-            url: `${api.POST}/${id}`,
+            url: `${api.POST}/${idPost}`,
             cbSuccess: (post) =>{
                 console.log(post);
                 $main.innerHTML = Post(post);

@@ -1,7 +1,5 @@
 export function FooterContenido(){
 
-    //Vamos a generar un div con la clase conteiner para usar el display table
-    //vamos a cambiar el h2 por a 
     const $doc = document,
     $conteiner = $doc.createElement("div"),
     $FooterContent = $doc.createElement("div"),

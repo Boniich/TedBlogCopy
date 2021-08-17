@@ -6,9 +6,9 @@ export function Menu(){
     $menu.id = "menu";
     $ul.innerHTML = `
     <li>Filter articles by: </li>
-    <li><a id="new" href="#/">Newest</a></li>
-    <li><a href="#/popular">Popular</a></li>
-    <li><a href="#/live">Live From TEDMonterey</a></li>`
+    <li><a id="colorNewest" href="#/">Newest</a></li>
+    <li><a id="colorPopular" href="#/popular">Popular</a></li>
+    <li><a id="colorTED" href="#/live">Live From TEDMonterey</a></li>`
 
     $menu.appendChild($ul);
 

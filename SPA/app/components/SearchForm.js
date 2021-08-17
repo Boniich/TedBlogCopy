@@ -13,9 +13,9 @@ export function SearchForm(){
     $input.type = "search";
     $input.placeholder = "Buscar...";
     $input.autocomplete = "off";
-    // Desactivamos hasta que empezemos a dar estilos y responsive
   
-
+  
+    //anidamos el imput en el nodo del form
     $form.appendChild($input);
 
 
