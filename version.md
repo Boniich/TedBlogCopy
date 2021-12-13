@@ -1,17 +1,16 @@
-# Version
+<img style="align:center" src="./app/asset/versionBanners/versions/version100.png">
+<br>
 
 The version on top of this file this the last.
 
-# Version v1.0.0
-
-## Features
+<img src="./app/asset/versionBanners/newFeature.png"></img>
 
 - Main page show the principal post and anothers 9 secondary.
 - Responsive
 - Search bar is working. 
 
 
-## Current Problems
+<img src="./app/asset/versionBanners/CurrentProblems.png"></img>
 
 - Select Nav is not working
 - Live From TEDMontery doesnt show anything
