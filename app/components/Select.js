@@ -7,9 +7,9 @@ export function Select(){
 
     $Select.classList.add("menu_desplegable");
 
-     $option1.innerHTML = "Newest"; //sirve pero solo toma uno
-     $option2.innerHTML = `<a href="#/popular">Popular</a>`;
-     $option3.innerHTML = "Live From TEDMonterey";
+     $option1.innerHTML = "Newest";
+     $option2.innerHTML = `Popular`;
+     $option3.innerHTML = "Live From TEDMonterey"; 
 
     
 
